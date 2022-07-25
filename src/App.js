@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 
 import Desc from './components/Desc/Desc';
 import Heading from './components/Heading/Heading';
-import Users from './components/Users';
+import Users from './components/Users/Users';
+import UsersAxios from './components/UsersAxios/UsersAxios';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -36,6 +37,10 @@ const App = () => {
         <Desc />
         <Heading />
         <Users />
+      </div>
+
+      <div>
+        <UsersAxios />
       </div>
     </div>
   );

@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getUsers = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await res.json();
 
-    console.log('data', data);
+    setIsLoading(false);
     setUsers(data);
   };
 
@@ -20,11 +21,14 @@ const Users = () => {
   return (
     <div>
       <h1>Users</h1>
-      <ul>
+
+      {isLoading && <div>Loading...</div>}
+
+      <div>
         {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <p key={user.id}>{user.name}</p>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
