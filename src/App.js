@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 
 import Desc from './components/Desc/Desc';
 import Heading from './components/Heading/Heading';
+import Users from './components/Users';
 
 const App = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log('current count is ' + count);
+    // console.log('current count is ' + count);
   }, [count]);
 
   const incCounter = () => {
@@ -34,6 +35,7 @@ const App = () => {
       <div>
         <Desc />
         <Heading />
+        <Users />
       </div>
     </div>
   );
